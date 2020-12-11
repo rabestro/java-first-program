@@ -1,5 +1,7 @@
 package com.h2;
 
+import static java.lang.Math.pow;
+
 public class MortgageCalculator {
     private final long loanAmount;
     private final int termInYears;
@@ -22,6 +24,10 @@ public class MortgageCalculator {
     }
 
     private void calculateMonthlyPayment() {
-        
+        final var P = loanAmount;
+        final var r = getMonthlyInterestRate();
+        final var n = getNumberOfPayments();
+        final var M = P * (((r * pow(1 + r, n))) / ((pow((1 + r), n)) - 1));
+        this.monthlyPayment = M;
     }
 }
