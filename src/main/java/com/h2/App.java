@@ -6,6 +6,7 @@ import java.util.Arrays;
  * Hello world!
  */
 public class App {
+
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
@@ -14,7 +15,7 @@ public class App {
         return number << 1;
     }
 
-    public static int add(int[] numbers) {
+    private static int add(int[] numbers) {
         return Arrays.stream(numbers).sum();
     }
 }
