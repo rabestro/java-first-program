@@ -39,4 +39,13 @@ public class MortgageCalculator {
 
         return "monthlyPayment: " + df.format(monthlyPayment);
     }
+
+    public static void main(String[] args) {
+        final var loanAmount = Long.parseLong(args[0]);
+        final var termInYears = Integer.parseInt(args[1]);
+        final var annualRate = Float.parseFloat(args[0]);
+        final var calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
+        calculator.calculateMonthlyPayment();
+        System.out.println(calculator);
+    }
 }
