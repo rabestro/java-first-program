@@ -34,4 +34,8 @@ public class SavingsCalculator {
         final var remainingDays = totalDaysInMonth - date.getDayOfMonth();
         return remainingDays;
     }
+
+    public int calculate() {
+        return 0;
+    }
 }
