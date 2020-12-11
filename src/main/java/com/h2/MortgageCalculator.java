@@ -20,4 +20,8 @@ public class MortgageCalculator {
         final var interestRate = annualRate / 100;
         return interestRate / 12;
     }
+
+    private void calculateMonthlyPayment() {
+        
+    }
 }
