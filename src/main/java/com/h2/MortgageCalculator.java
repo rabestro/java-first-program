@@ -30,4 +30,12 @@ public class MortgageCalculator {
         final var M = P * (((r * pow(1 + r, n))) / ((pow((1 + r), n)) - 1));
         this.monthlyPayment = M;
     }
+
+    @Override
+    public String toString() {
+        
+        return "MortgageCalculator{" +
+                "monthlyPayment=" + monthlyPayment +
+                '}';
+    }
 }
