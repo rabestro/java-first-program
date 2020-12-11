@@ -25,7 +25,7 @@ public class MortgageCalculator {
         return interestRate / 12;
     }
 
-    private void calculateMonthlyPayment() {
+    public void calculateMonthlyPayment() {
         final var P = loanAmount;
         final var r = getMonthlyInterestRate();
         final var n = getNumberOfPayments();
