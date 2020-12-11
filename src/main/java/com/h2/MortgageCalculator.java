@@ -1,5 +1,7 @@
 package com.h2;
 
+import java.text.DecimalFormat;
+
 import static java.lang.Math.pow;
 
 public class MortgageCalculator {
@@ -33,9 +35,8 @@ public class MortgageCalculator {
 
     @Override
     public String toString() {
-        
-        return "MortgageCalculator{" +
-                "monthlyPayment=" + monthlyPayment +
-                '}';
+        final var df = new DecimalFormat("####0.00");
+
+        return "monthlyPayment: " + df.format(monthlyPayment);
     }
 }
