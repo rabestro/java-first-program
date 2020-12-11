@@ -29,7 +29,7 @@ public class MortgageCalculator {
         final var P = loanAmount;
         final var r = getMonthlyInterestRate();
         final var n = getNumberOfPayments();
-        final var M = P * (((r * pow(1 + r, n))) / ((pow((1 + r), n)) - 1));
+        final var M = P * (r * pow(1 + r, n)) / (pow(1 + r, n) - 1);
         this.monthlyPayment = M;
     }
 
@@ -43,7 +43,7 @@ public class MortgageCalculator {
     public static void main(String[] args) {
         final var loanAmount = Long.parseLong(args[0]);
         final var termInYears = Integer.parseInt(args[1]);
-        final var annualRate = Float.parseFloat(args[0]);
+        final var annualRate = Float.parseFloat(args[2]);
         final var calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
         calculator.calculateMonthlyPayment();
         System.out.println(calculator);
