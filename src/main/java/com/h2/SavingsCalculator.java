@@ -12,6 +12,10 @@ public class SavingsCalculator {
         this.debits = debits;
     }
 
+    public static void main(String[] args) {
+        
+    }
+
     private float sumOfCredits() {
         float sum = .0f;
         for (final var credit : credits) {
