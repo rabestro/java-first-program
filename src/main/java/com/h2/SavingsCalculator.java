@@ -13,7 +13,21 @@ public class SavingsCalculator {
     }
 
     public static void main(String[] args) {
-        
+        final var creditsAsString = args[0].split(",");
+        final var debitsAsString = args[1].split(",");
+        final var credits = new float[creditsAsString.length];
+        final var debits = new float[debitsAsString.length];
+
+        for (int i = 0; i < credits.length; ++i) {
+            credits[i] = Float.parseFloat(creditsAsString[i]);
+        }
+        for (int i = 0; i < debits.length; ++i) {
+            debits[i] = Float.parseFloat(debitsAsString[i]);
+        }
+        final var calculator = new SavingsCalculator(credits, debits);
+        final var netSavings = calculator.calculate();
+        System.out.println("Net Savings = " + netSavings + ", remaining days in month = "
+                + remainingDaysInMonth(LocalDate.now()));
     }
 
     private float sumOfCredits() {
