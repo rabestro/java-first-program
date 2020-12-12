@@ -30,6 +30,13 @@ public class SavingsCalculator {
                 + remainingDaysInMonth(LocalDate.now()));
     }
 
+    private static int remainingDaysInMonth(LocalDate date) {
+        final var yearMonth = YearMonth.of(date.getYear(), date.getMonth());
+        final var totalDaysInMonth = yearMonth.lengthOfMonth();
+        final var remainingDays = totalDaysInMonth - date.getDayOfMonth();
+        return remainingDays;
+    }
+
     private float sumOfCredits() {
         float sum = .0f;
         for (final var credit : credits) {
@@ -44,13 +51,6 @@ public class SavingsCalculator {
             sum += debit;
         }
         return sum;
-    }
-
-    private static int remainingDaysInMonth(LocalDate date) {
-        final var yearMonth = YearMonth.of(date.getYear(), date.getMonth());
-        final var totalDaysInMonth = yearMonth.lengthOfMonth();
-        final var remainingDays = totalDaysInMonth - date.getDayOfMonth();
-        return remainingDays;
     }
 
     public float calculate() {

@@ -16,6 +16,15 @@ public class MortgageCalculator {
         this.annualRate = annualRate;
     }
 
+    public static void main(String[] args) {
+        final var loanAmount = Utilities.getLongValue(args[0]);
+        final var termInYears = Utilities.getIntValue(args[1]);
+        final var annualRate = Utilities.getFloatValue(args[2]);
+        final var calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
+        calculator.calculateMonthlyPayment();
+        System.out.println(calculator);
+    }
+
     private int getNumberOfPayments() {
         return termInYears * 12;
     }
@@ -40,12 +49,4 @@ public class MortgageCalculator {
         return "monthlyPayment: " + df.format(monthlyPayment);
     }
 
-    public static void main(String[] args) {
-        final var loanAmount = Utilities.getLongValue(args[0]);
-        final var termInYears = Utilities.getIntValue(args[1]);
-        final var annualRate = Utilities.getFloatValue(args[2]);
-        final var calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
-        calculator.calculateMonthlyPayment();
-        System.out.println(calculator);
-    }
 }

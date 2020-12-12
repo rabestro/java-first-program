@@ -20,6 +20,7 @@ public class Utilities {
         }
         return out;
     }
+
     public static float getFloatValue(final String in) {
         var out = Float.MIN_VALUE;
         try {
