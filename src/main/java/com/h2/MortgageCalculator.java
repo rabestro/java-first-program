@@ -41,9 +41,9 @@ public class MortgageCalculator {
     }
 
     public static void main(String[] args) {
-        final var loanAmount = Long.parseLong(args[0]);
-        final var termInYears = Integer.parseInt(args[1]);
-        final var annualRate = Float.parseFloat(args[2]);
+        final var loanAmount = Utilities.getLongValue(args[0]);
+        final var termInYears = Utilities.getIntValue(args[1]);
+        final var annualRate = Utilities.getFloatValue(args[2]);
         final var calculator = new MortgageCalculator(loanAmount, termInYears, annualRate);
         calculator.calculateMonthlyPayment();
         System.out.println(calculator);
