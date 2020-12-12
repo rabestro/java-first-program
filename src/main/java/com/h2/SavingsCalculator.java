@@ -19,10 +19,10 @@ public class SavingsCalculator {
         final var debits = new float[debitsAsString.length];
 
         for (int i = 0; i < credits.length; ++i) {
-            credits[i] = Float.parseFloat(creditsAsString[i]);
+            credits[i] = Utilities.getFloatValue(creditsAsString[i]);
         }
         for (int i = 0; i < debits.length; ++i) {
-            debits[i] = Float.parseFloat(debitsAsString[i]);
+            debits[i] = Utilities.getFloatValue(debitsAsString[i]);
         }
         final var calculator = new SavingsCalculator(credits, debits);
         final var netSavings = calculator.calculate();
