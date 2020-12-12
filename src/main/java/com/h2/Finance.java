@@ -38,4 +38,8 @@ public class Finance {
                 MortgageCalculator.main(arguments);
         }
     }
+
+    public static void main(String[] args) {
+        
+    }
 }
