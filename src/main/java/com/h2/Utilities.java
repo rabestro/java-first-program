@@ -20,4 +20,13 @@ public class Utilities {
         }
         return out;
     }
+    public static float getFloatValue(final String in) {
+        var out = Float.MIN_VALUE;
+        try {
+            out = Float.parseFloat(in);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException(in + " cannot be converted into a 'float' value. Exiting program.");
+        }
+        return out;
+    }
 }
